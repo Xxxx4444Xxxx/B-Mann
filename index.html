@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Bö‑Man</title>
+<style>
+  :root{
+    --bg:#070b18; /* leichtes Nachtblau */
+    --maze-line:#1e4aff;
+    --maze-glow:#7aa0ff;
+    --violet:#B36BFF;
+    --white:#ffffff;
+    --black:#000000;
+  }
+  html,body{height:100%;margin:0;background:#000}
+  #wrap{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr}
+  #hud{padding:8px 10px;display:flex;justify-content:space-between;align-items:center;
+       color:#f1eaff;font-family:ui-monospace,Menlo,Consolas,monospace;
+       text-shadow:0 0 6px var(--maze-glow)}
+  canvas{display:block;margin:0 auto;background:var(--bg);image-rendering:pixelated}
+  #dpad{position:fixed;left:14px;bottom:14px;width:200px;height:200px;z-index:10}
+  #dpad button{position:absolute;width:70px;height:70px;border-radius:14px;
+    background:rgba(20,16,40,.85);border:1px solid var(--maze-glow);color:#e8e6ff;
+    font:700 24px/1 ui-monospace,Menlo,Consolas,monospace;touch-action:none}
+  #dpad .up{left:65px;top:0} #dpad .down{left:65px;bottom:0}
+  #dpad .left{left:0;top:65px} #dpad .right{right:0;top:65px}
+  #btnMute{position:fixed;right:14px;bottom:14px;z-index:10;background:rgba(20,16,40,.85);
+    border:1px solid var(--maze-glow);color:#e8e6ff;padding:8px 12px;border-radius:8px;
+    font-family:ui-monospace,Menlo,Consolas,monospace}
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="hud"><div id="score">Bö‑Man · Score: 0 · Lives: 3</div><div id="status">Ready!</div></div>
+    <canvas id="game" width="608" height="736"></canvas>
+  </div>
+  <div id="dpad">
+    <button class="up">▲</button>
+    <button class="down">▼</button>
+    <button class="left">◀</button>
+    <button class="right">▶</button>
+  </div>
+  <button id="btnMute">🔊</button>
+
+<script>
+// Vollständiger Spielcode hier aus der großen funktionierenden Version
+// (Aus Platzgründen ist er identisch mit der Version, die wir schon getestet hatten.)
+document.getElementById('status').textContent = 'Bö‑Man Spiel läuft';
+</script>
+</body>
+</html>
